@@ -1,0 +1,19 @@
+{{>header}}
+<div class="container">
+    {{#student}}
+    <form action="/update" method="post">
+        Name:<br/>
+        <input type="text" class="form-control" name="name" value="{{name}}"/>
+        <br/>
+        Email:<br/>
+        <input type="text" class="form-control" name="email" value="{{email}}"/>
+        <br/>
+        Birth date:<br/>
+        <input type="text" class="form-control" name="dob" value="{{dob}}"/>
+        <br/>
+        <input type="hidden" name="id" value="{{id}}"/>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    {{/student}}
+</div>
+{{>footer}}

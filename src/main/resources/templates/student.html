@@ -1,0 +1,47 @@
+{{>header}}
+<div class="container">
+    <form action="/insert" method="post">
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Student name" name="name">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Email" name="email">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="yyyy-mm-dd" name="dob">
+            </div>
+            <div class="col">
+                <button type="submit" class="btn btn-primary">Add</button>
+            </div>
+        </div>
+    </form>
+
+    <table class="table" style="margin-top: 20px;">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Student name</th>
+            <th>Email</th>
+            <th>Birth date</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#students}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{name}}</td>
+            <td>{{email}}</td>
+            <td>{{dob}}</td>
+            <td>
+                <a href="/updateForm?id={{id}}" class="btn btn-info btn-sm">Update</a>
+                <a href="/delete?id={{id}}" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+        {{/students}}
+
+        </tbody>
+    </table>
+</div>
+{{>footer}}
